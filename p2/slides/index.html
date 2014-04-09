@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Open Source - Sudo Soldiers</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Git Like a Pro</h1>
+          <p>
+            <small>Sudo Soldiers <br> 04.09.2014</small>
+          </p>
+        </section>
+
+        <section>
+          <h2>Hi. I’m Karan.</h2>
+          <img src="http://www.goel.im/images/me.jpg" alt="" style="width:200px">
+          <p>
+            <ul>
+              <li>CS, UW
+              <li><3 code
+              <li><a href="http://www.goel.im">goel.im</a>
+              <li><a href="https://twitter.com/TheKaranGoel">@TheKaranGoel</a></li>
+            </ul>
+          </p>
+
+          <aside class="notes">
+            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+          </aside>
+        </section>
+
+        <section>
+          <h2>Sudo Soldiers</h2>
+          <img src="http://i.imgur.com/a7B1FtF.jpg" alt="" style="width:700px">
+          <ul>
+            <li><a href="https://www.facebook.com/groups/uwhackers/">https://www.facebook.com/groups/uwhackers/</a>
+            <li><a href="https://github.com/SudoSoldiers/">https://github.com/SudoSoldiers/</a>
+            <li><a href="http://students.washington.edu/uwsudo/">http://students.washington.edu/uwsudo/</a>
+            <li>uwsudo@uw.edu
+          </ul>
+        </section>
+
+        <section>
+          <h2>Version control</h2>
+          <ul>
+            <li>track history of files</li>
+            <li>revert to a (previous) version</li>
+            <li>git, svn...</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <h2><i>Distributed</i> Version control</h2>
+          <ul>
+            <li>no central server</li>
+            <li>a <i>clone</i> becomes a repository</li>
+            <li>clone has full history</li>
+            <li>clones can exchange changes with a remotely hosted repo</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>So...</h2>
+          <h1>Git</h1>
+          <blockquote>Git is a free and open source distributed version control system...</blockquote>
+          <ul>
+            <li>Linus</li>
+            <li>C</li>
+            <li>> svn</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Github</h2>
+          <ul>
+            <li>Website</li>
+            <li>Host your remote repos</li>
+            <li>Social network for nerds</li>
+            <li>Super awesome!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Git vocabulary</h2>
+          <ul>
+            <li>branch - parallel version of repository</li>
+            <li>clone - creating a copy of repository</li>
+            <li>commit - a change, or revision</li>
+            <li>repository - "a project folder"</li>
+            <li>remote - version hosted on a server</li>
+            <li>pull/push - get/send updates</li>
+            <li>fetch - get changes without merging them</li>
+            <li>working tree - current version of local repo</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Commit</h2>
+          <p>2 steps to register your changes</p>
+          <ul>
+            <li>Working tree -> Staging index <br>
+              <pre><code data-trim>git add files.txt</code></pre></li>
+            <li>Staging index -> Git repository</li>
+            <pre><code data-trim>git commit -m "a helpful commit message"</code></pre></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>SHA-1</h2>
+          <ul>
+            <li>Each commit is addressed by it's hashcode - SHA-1</li>
+            <li>Each commit is an object - SHA-1 is a field</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Installing git</h2>
+          <p><a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></p>
+          <ul>
+            <li>Binaries for Win, Mac, Linux</li>
+            <li>Build from source</li>
+          </ul>
+          <blockquote>"If you want to build [git] on Windows: Don't."</blockquote>
+        </section>
+
+        <section>
+          <h3>Some famous contributors</h3>
+          <ul>
+            <li><a href="https://github.com/hakimel">Hakim El</a> - Frontend genius
+            <li><a href="https://github.com/mbostock">Michael Bostock</a> - Visualization guru (D3)
+            <li><a href="https://github.com/paulirish">Paul Irish</a> - Chrome guy
+            <li><a href="https://github.com/guille">Guillermo</a> - Creator of Socket.IO
+            <li><a href="https://github.com/visionmedia">TJ</a> - Node God
+          </ul>
+          <br>
+          <br>
+          <p>They build the tech that is changing the world.</p>
+        </section>
+
+        <section>
+          <h2>But...</h2>
+          <br>
+          <q>I don't know anything but Java</q>
+          <br>
+          <br>
+          <q>I'm just starting out</q>
+          <br>
+          <br>
+          <q>I haven't ever done anything like this before</q>
+        </section>
+
+        <section data-background="gray">
+          <h1>Even better</h1>
+          <p>You have the resources, community, and potential of learning and building something great!</p>
+        </section>
+
+        <section>
+          <h1>How?</h1>
+          <h3>Seems like a lot of work</h3>
+        </section>
+
+        <section data-background="gray">
+          <h1>Github!</h1>
+          <h2>It's super simple.</h2>
+          <h3>Even a 5th grader can contribute (seriously)</h3>
+        </section>
+
+        <section>
+          <h3>Git flow</h3>
+          <h5>Learn 'the way' of Github</h5>
+          <ul>
+            <li><a href="http://try.github.io/">Try Github</a>
+            <li><a href="http://rogerdudler.github.io/git-guide/">Git Guide</a>
+            <li>We'll go over a demo in a bit
+          </ul>
+        </section>
+
+        <section>
+          <h2>Where do I find projects?</h2>
+          <h4>(Hint: It starts with a 'G'.)</h4>
+        </section>
+
+        <section>
+          <h2><a href="https://help.github.com/articles/where-can-i-find-open-source-projects-to-work-on">Github</a></h2>
+          <ul>
+            <li>Find issues
+            <li>Find types
+            <li>Edit code on Github.com!
+            <li>Browse "trending" repos
+          </ul>
+        </section>
+
+        <section>
+          <h2>Examples</h2>
+          <ul>
+            <li><a href="https://github.com/gabrielecirulli/2048">2048</a>
+            <li><a href="https://github.com/codecombat/codecombat">Code Combat</a>
+            <li><a href="https://github.com/uberVU/grid">CSS Grid</a>
+            <li><a href="https://github.com/LearnBoost/socket.io">Socket.IO</a>
+            <li><a href="https://github.com/jendewalt/jennifer_dewalt">180 websites in 180 days</a>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What are you guys interested in?</h2>
+          <h4>(Demo time)</h4>
+        </section>
+
+        <section>
+          <h2>Hackathons</h2>
+          <ul>
+            <li>Startup Weekend
+            <li>Codeday
+            <li>Angelhack
+          </ul>
+          <br>
+          <img src="http://abovethelaw.com/wp-content/uploads/2013/11/uncle-sam-we-want-you.jpg" style="width:500px;" alt="">
+        </section>
+
+        <section>
+          <h2>Code competition</h2>
+          <img src="http://roblynch.info/wp-content/uploads/2013/12/HackerRank_logo.png" style="border:none;background-color:transparent;width:200px;box-shadow:none;" alt="">
+          <p>We'll also have a competition in a few weeks</p>
+        </section>
+
+        <section>
+          <blockquote>People are open sourcing cancer drugs, what are you doing?</blockquote>
+          <p> - Karan Goel</p>
+        </section>
+
+        <section>
+          <h2>Great Resources</h2>
+          <ul>
+            <li><a href="http://www.whatcanidoformozilla.org/#!/progornoprog/support">What can I do for Mozilla</a>
+            <li><a href="http://www.hanselman.com/blog/GetInvolvedInOpenSourceTodayHowToContributeAPatchToAGitHubHostedOpenSourceProjectLikeCode52.aspx">How to get involved in open source</a>
+            <li><a href="https://github.com/search?l=Python&q=stars%3A%3E1&s=updated&type=Repositories">Github project search</a>
+            <li><a href="https://help.github.com/articles/where-can-i-find-open-source-projects-to-work-on">Github: Where can I find proejcts?</a>
+          </ul>
+        </section>
+
+        <section>
+          <h1>That is all.</h1>
+          <p>@GrantTimmerman</p>
+          <p><a href="http://github.com/grant">github.com/grant</a></p>
+          <br>
+          <h3>Questions?</h3>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
