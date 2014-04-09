@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Open Source - Sudo Soldiers</title>
+    <title>Git Like a Pro - Sudo Soldiers</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -51,10 +51,6 @@
               <li><a href="https://twitter.com/TheKaranGoel">@TheKaranGoel</a></li>
             </ul>
           </p>
-
-          <aside class="notes">
-            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-          </aside>
         </section>
 
         <section>
@@ -124,153 +120,306 @@
         </section>
 
         <section>
-          <h2>Commit</h2>
-          <p>2 steps to register your changes</p>
-          <ul>
-            <li>Working tree -> Staging index <br>
-              <pre><code data-trim>git add files.txt</code></pre></li>
-            <li>Staging index -> Git repository</li>
-            <pre><code data-trim>git commit -m "a helpful commit message"</code></pre></li>
-          </ul>
+          <section>
+            <h1>Commit</h1>
+          </section>
+          <section>
+            <p>2 steps to register your changes</p>
+            <ul>
+              <li>Working tree -> Staging index <br>
+                <pre><code data-trim>git add files.txt</code></pre></li>
+              <li>Staging index -> Git repository</li>
+              <pre><code data-trim>git commit -m "a helpful commit message"</code></pre></li>
+            </ul>
+          </section>
         </section>
 
         <section>
-          <h2>SHA-1</h2>
+          <section>
+            <h1>SHA-1</h1>
+          </section>
+          <section>
           <ul>
             <li>Each commit is addressed by it's hashcode - SHA-1</li>
             <li>Each commit is an object - SHA-1 is a field</li>
+            <li>40 bytes long</li>
           </ul>
+          </section>
         </section>
 
         <section>
-          <h2>Installing git</h2>
+          <section>
+            <h1>Installing git</h1>
+          </section>
+          <section>
           <p><a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></p>
           <ul>
             <li>Binaries for Win, Mac, Linux</li>
             <li>Build from source</li>
           </ul>
           <blockquote>"If you want to build [git] on Windows: Don't."</blockquote>
+          </section>
         </section>
 
         <section>
-          <h3>Some famous contributors</h3>
-          <ul>
-            <li><a href="https://github.com/hakimel">Hakim El</a> - Frontend genius
-            <li><a href="https://github.com/mbostock">Michael Bostock</a> - Visualization guru (D3)
-            <li><a href="https://github.com/paulirish">Paul Irish</a> - Chrome guy
-            <li><a href="https://github.com/guille">Guillermo</a> - Creator of Socket.IO
-            <li><a href="https://github.com/visionmedia">TJ</a> - Node God
-          </ul>
-          <br>
-          <br>
-          <p>They build the tech that is changing the world.</p>
+          <section>
+            <h1>Configure git</h1>
+          </section>
+          <section>
+          <p>Important since Github uses email to identify user (unless using ssh)</p>
+          <pre><code># configure the user which will be used by git
+# Of course you should use your name
+git config --global user.name "Example Surname"
+
+# Same for the email address
+git config --global user.email "your.email@gmail.com" 
+          </code></pre>
+          </section>
         </section>
 
         <section>
-          <h2>But...</h2>
-          <br>
-          <q>I don't know anything but Java</q>
-          <br>
-          <br>
-          <q>I'm just starting out</q>
-          <br>
-          <br>
-          <q>I haven't ever done anything like this before</q>
+          <section>
+            <h2>Create a repository</h2>
+          </section>
+          <section>
+          <pre><code>git init awesome-project</code></pre>
+          <p>Or</p>
+          <pre><code>cd ~/awesome-project
+git init</code></pre>
+          <h3>Or, clone.</h3>
+          <pre><code>git clone link/to/remote</code></pre>
+        </section>
+        </section>
+
+        <section>
+          <section>
+          <h1>.gitignore</h1>
+          </section>
+          <section>
+          <p>Specifies intentionally untracked files to ignore</p>
+          <pre><code>cd awesome-project
+vim .gitignore</code></pre>
+
+          <pre><code># a comment
+.to-exclude
+!include-this.txt</code></pre>
+          <p>Complete pattern guide here: <a href="http://git-scm.com/docs/gitignore">http://git-scm.com/docs/gitignore</a></p>
+          <p>Committed files are not automatically removed. Use this to remove files from git repo:</p>
+          <pre><code>git rm -r --cached awesome-file</code></pre>
+          </section>
         </section>
 
         <section data-background="gray">
-          <h1>Even better</h1>
-          <p>You have the resources, community, and potential of learning and building something great!</p>
-        </section>
+          <h2>Usual workflow</h2>
+          <pre><code># assuming you have a repo with changes made to it
 
-        <section>
-          <h1>How?</h1>
-          <h3>Seems like a lot of work</h3>
+# this shows files that have been changed, and the status of stage
+git status
+
+# add all files to the stage
+git add .
+
+# commit the changes to local repo
+git commit -m "a message"</code></pre>
         </section>
 
         <section data-background="gray">
-          <h1>Github!</h1>
-          <h2>It's super simple.</h2>
-          <h3>Even a 5th grader can contribute (seriously)</h3>
+          <h1>80/20</h1>
         </section>
 
         <section>
-          <h3>Git flow</h3>
-          <h5>Learn 'the way' of Github</h5>
+          <h2>log</h2>
+          <pre><code># show git log
+git log
+
+# this is what the output looks like
+commit bcf7bd065199c1e79c8dcc57a9518bd53dec6da5
+Author: Karan Goel < karan@goel.im>
+Date:   Tue Apr 8 17:41:14 2014 -0700
+
+    started adding files for tomorrow</code></pre>
+
+          <p>Useful flags:</p>
           <ul>
-            <li><a href="http://try.github.io/">Try Github</a>
-            <li><a href="http://rogerdudler.github.io/git-guide/">Git Guide</a>
-            <li>We'll go over a demo in a bit
+            <li><code>--oneline</code> - give single line log</li>
+            <li><code>-N</code> - give last N commits</li>
           </ul>
         </section>
 
         <section>
-          <h2>Where do I find projects?</h2>
-          <h4>(Hint: It starts with a 'G'.)</h4>
+          <h2>Remotes</h2>
+          <p>A remote is a URL to a remote server where code lives. Default remote is called <i>origin</i></p>
+
+          <pre><code># add a new remote
+git remote add < remote> < link>
+
+# show all remotes
+git remote -v
+
+# fetches the code and merges it into your working directory
+git pull < remote> < branch>
+# fetches the code but does not merge it into your working directory
+git fetch < remote> < branch>
+
+# push my committed changes to remote and remember the upstread branch
+git push -u origin master</code></pre>
         </section>
 
         <section>
-          <h2><a href="https://help.github.com/articles/where-can-i-find-open-source-projects-to-work-on">Github</a></h2>
+          <section>
+            <h1>Github</h1>
+          </section>
+
+          <section>
+            <h2>Clone from Github</h2>
+
+            <pre><code># SSH
+git clone git@github.com:karan/Projects.git
+
+# HTTPS
+git clone https://github.com/karan/Projects.git</code></pre>
+        
+          </section>
+
+          <section>
+            <h2>Forking</h2>
+
+            <ul>
+              <li>Complete history of original repo</li>
+              <li>Encourages individual exploration</li>
+              <li>Forking != Cloning</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Pull Requests</h2>
+            <ul>
+              <li>Merging with traceability</li>
+              <li>Peer-review via GitHub & Git</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h1>Ninja tricks</h1>
+        </section>
+
+        <section>
+          <h3>Correct the last commit</h3>
+          <pre><code># because coding while drunk is bad for you
+git commit -m "my boss is a dick"</code></pre>
+
+<pre data-fragment-index="0" class="fragment"><code># thank god for git
+git commit --amend -m "my boss is a fat dick"</code></pre>
+        </section>
+
+        <section>
+          <h3>Check history of specific file</h3>
+          <pre><code>git log -- filename</code></pre>
+        </section>
+
+        <section>
+          <h3>Undo commit</h3>
+          <pre><code># Revert to a previous commit by SHA-1 hash
+git reset --hard < hash>
+
+# or simply undo the last commit
+git reset --hard HEAD^</code></pre>
+        </section>
+
+        <section>
+          <h3>Tagging</h3>
+          <pre><code># tags are used to mark specific points in history
+
+# list all tags
+git tag
+
+# add a new tag
+git tag -a "v1.0"
+
+# or add a tag for any commit
+git tag -a "v1.0" < hash>
+
+# push tags to remote
+git push --tag </code></pre>
+        </section>
+
+        <section>
+          <h3>Branches</h3>
+          <pre><code># create a new branch
+git branch branch-name
+
+# list all branches in the current repository
+git branch
+
+# switch to an existing branch
+git checkout branch-name
+
+# create a branch and switch to it
+git checkout -b branch-name
+
+# delete a branch
+git branch -d branch-name
+
+# merge two branches (source into target) (make sure to be on target)
+git merge source</code></pre>
+        </section>
+
+        <section>
+          <h3>Merge conflicts</h3>
+          <pre><code># git is smart, but not really. when same line is changed more 
+# than once at the same time, conflicts can arise
+
+# this is what lines with conflicts look like
+
+<<<<<<< HEAD
+This is what my local repo has.
+=======
+This is what someone else did.
+>>>>>>> 0c7ac2ab7ab93366fb662e8292706c084001fb31 
+
+# manually select what to keep, commit and push!</code></pre>
+        </section>
+
+        <section>
+          <h3>Aliases</h3>
+          <pre><code>vim ~/.bashrc
+
+# git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push $1 $1'
+
+# saves a gazillion keystrokes
+
+# for those who live on the edge
+alias yolo = 'git commit -am "TAG" && git push -f origin master'</code></pre>
+        </section>
+
+        <section data-background="teal">
+          <h2>Now what?</h2>
           <ul>
-            <li>Find issues
-            <li>Find types
-            <li>Edit code on Github.com!
-            <li>Browse "trending" repos
+            <li>Signup for Github</li>
+            <li>Start working with git</li>
+            <li>Good resource: <a href="https://github.com/karan/Projects">karan/Projects</a></li>
           </ul>
         </section>
 
-        <section>
-          <h2>Examples</h2>
+        <section data-background="teal">
+          <h2>Resources</h2>
           <ul>
-            <li><a href="https://github.com/gabrielecirulli/2048">2048</a>
-            <li><a href="https://github.com/codecombat/codecombat">Code Combat</a>
-            <li><a href="https://github.com/uberVU/grid">CSS Grid</a>
-            <li><a href="https://github.com/LearnBoost/socket.io">Socket.IO</a>
-            <li><a href="https://github.com/jendewalt/jennifer_dewalt">180 websites in 180 days</a>
-          </ul>
-        </section>
-
-        <section>
-          <h2>What are you guys interested in?</h2>
-          <h4>(Demo time)</h4>
-        </section>
-
-        <section>
-          <h2>Hackathons</h2>
-          <ul>
-            <li>Startup Weekend
-            <li>Codeday
-            <li>Angelhack
-          </ul>
-          <br>
-          <img src="http://abovethelaw.com/wp-content/uploads/2013/11/uncle-sam-we-want-you.jpg" style="width:500px;" alt="">
-        </section>
-
-        <section>
-          <h2>Code competition</h2>
-          <img src="http://roblynch.info/wp-content/uploads/2013/12/HackerRank_logo.png" style="border:none;background-color:transparent;width:200px;box-shadow:none;" alt="">
-          <p>We'll also have a competition in a few weeks</p>
-        </section>
-
-        <section>
-          <blockquote>People are open sourcing cancer drugs, what are you doing?</blockquote>
-          <p> - Karan Goel</p>
-        </section>
-
-        <section>
-          <h2>Great Resources</h2>
-          <ul>
-            <li><a href="http://www.whatcanidoformozilla.org/#!/progornoprog/support">What can I do for Mozilla</a>
-            <li><a href="http://www.hanselman.com/blog/GetInvolvedInOpenSourceTodayHowToContributeAPatchToAGitHubHostedOpenSourceProjectLikeCode52.aspx">How to get involved in open source</a>
-            <li><a href="https://github.com/search?l=Python&q=stars%3A%3E1&s=updated&type=Repositories">Github project search</a>
-            <li><a href="https://help.github.com/articles/where-can-i-find-open-source-projects-to-work-on">Github: Where can I find proejcts?</a>
+            <li><a href="http://git-scm.com/book">Git book</a></li>
+            <li><a href="Github help">https://help.github.com/</a></li>
+            <li><a href="http://www.ndpsoftware.com/git-cheatsheet.html">Visual cheatsheet</a></li>
+            <li><a href="http://eagain.net/articles/git-for-computer-scientists/">Git for computer scientists</a></li>
           </ul>
         </section>
 
         <section>
           <h1>That is all.</h1>
-          <p>@GrantTimmerman</p>
-          <p><a href="http://github.com/grant">github.com/grant</a></p>
+          <p>@TheKaranGoel</p>
+          <p><a href="http://github.com/karan">github.com/karan</a></p>
           <br>
           <h3>Questions?</h3>
         </section>
