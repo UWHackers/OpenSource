@@ -52,6 +52,9 @@
 				<section>
 					<section>
 						<h1>Welcome.</h1>
+						<aside class="notes">
+							This is a test note to see whether or not this shit actually works
+						</aside>
 					</section>
 					<section>
 						<h2>Today's plate</h2>
@@ -115,34 +118,34 @@
 					<h1>LeapJS</h1>
 				</section>
 				<section>
-					<section>
-						<h2>Getting started...</h2>
-						<pre><code class="javascript">
-var leap = require('//js.leapmotion.com/leap-0.4.3.min.js');
-
-var controller = new leap.Controller({
+					<h2>Getting started...</h2>
+					<p>HTML</p>
+					<pre><code class="html">
+<script src="//js.leapmotion.com/leap-0.4.3.min.js"></script>
+					</code></pre>
+					<p>JavaScript</p>
+					<pre><code class="javascript">
+var controller = new Leap.Controller({
 	enableGestures: true
 });
 
 controller.connect();
-						</code></pre>
-					</section>
-					<section>
-						<h2>The loop</h2>
-						<pre><code class="javascript">
-var leap = require('//js.leapmotion.com/leap-0.4.3.min.js');
-
-var controller = new leap.Controller({
+					</code></pre>
+				</section>
+				<section>
+					<h2>The loop</h2>
+					<pre><code class="javascript">
+var controller = new Leap.Controller({
 	enableGestures: true
 });
 
 controller.connect();
 
+// the Leap Motion loop
 controller.on('frame', function (frame) {
-	
+
 });
-						</code></pre>
-					</section>
+					</code></pre>
 				</section>
 			</div>
 
@@ -177,12 +180,9 @@ controller.on('frame', function (frame) {
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+        			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/leap/leap.js', async: true }
 				]
 			});
