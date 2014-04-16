@@ -54,7 +54,7 @@
 						<h1>Welcome.</h1>
 					</section>
 					<section>
-						<h2>What we're going to cover today</h2>
+						<h2>Today's plate</h2>
 						<ul>
 							<li>Leap Motion</li>
 							<li>Leap Motion SDK</li>
@@ -70,6 +70,78 @@
 						<p>Freshman, UW</p>
 						<p>Computer Science?</p>
 						<p><a href="http://rukmal.me/">http://rukmal.me/</a>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>What is it?</h1>
+					</section>
+					<section>
+						<iframe width="1244" height="700" src="http://www.youtube.com/embed/_d6KuiuteIA" frameborder="0" allowfullscreen></iframe>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Who uses it?</h1>
+					</section>
+					<section>
+						<h2>SpaceX</h2>
+						<blockquote>
+							Right now, we interact with computers in a very unnatural 2D way.
+							<br>
+							With the Leap Motion Controller, you can really apply your intuition and something from your mind to a physical object with far greater ease than we currently do.
+						</blockquote>
+						<p>- Elon Musk</p>
+					</section>
+				</section>
+				<section>
+					<h1>How do I get started?</h1>
+				</section>
+				<section>
+					<img src="images/leapmotion_developer.png">
+				</section>
+				<section>
+					<h2>What languages can I use it with?</h2>
+					<ul>
+						<li>C++</li>
+						<li>C#</li>
+						<li>Objective C</li>
+						<li>Java</li>
+						<li>JavaScript</li>
+						<li>Python</li>
+					</ul>
+				</section>
+				<section data-background="#990099">
+					<h1>LeapJS</h1>
+				</section>
+				<section>
+					<section>
+						<h2>Getting started...</h2>
+						<pre><code class="javascript">
+var leap = require('//js.leapmotion.com/leap-0.4.3.min.js');
+
+var controller = new leap.Controller({
+	enableGestures: true
+});
+
+controller.connect();
+						</code></pre>
+					</section>
+					<section>
+						<h2>The loop</h2>
+						<pre><code class="javascript">
+var leap = require('//js.leapmotion.com/leap-0.4.3.min.js');
+
+var controller = new leap.Controller({
+	enableGestures: true
+});
+
+controller.connect();
+
+controller.on('frame', function (frame) {
+	
+});
+						</code></pre>
 					</section>
 				</section>
 			</div>
