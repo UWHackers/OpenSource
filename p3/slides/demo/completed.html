@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>My first Leap Motion App!</title>
+		<script src="http://js.leapmotion.com/leap-0.4.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	</head>
+	<body>
+		<div id="outer">
+			<div id="pointer"></div>
+		</div>
+		<style>
+			html, body {
+				margin: 0em;
+				padding: 0em;
+				height: 100%;
+				width: 100%;
+			}
+
+			#outer {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: blue;
+			}
+
+			#pointer {
+				position: absolute;
+				background-color: red;
+				height: 50px;
+				width: 50px;
+				left: 50%;
+				top: 50%;
+				border-radius: 50px;
+				transition: left 10ms;
+				transition: right 10ms;
+			}
+		</style>
+		<script>
+			// Initializing the Leap Motion controller
+			var controller = new Leap.Controller();
+
+			// Connecting to the Leap Motion
+			controller.connect();
+
+			// Leap Motion control loop
+			controller.on('frame', function (frame) {
+				var fingers = frame.fingers;
+				// Making sure that there are fingers on screen
+				if (fingers.length) {
+					// Isolating the 'tip position' of the fingers
+					var position = fingers[0].tipPosition;
+					var x = position[0]; // x position
+					var y = position[1]; // y position
+					var z = position[2]; // z position
+					// Making sure that the finger is within the correct limits
+					if ((x < 200 && x > -200) && (y < 450 && y > 50) && (z < 200 && z > -200)) {
+						// Translating x and y coordinates to percentage
+						var xCor = (x + 200) / 4;
+						var yCor = 100 - (y - 50) / 4;
+						// Translating z coordinate to pixel size
+						var zSize = 100 - (z + 200) / 4;
+						// Changing CSS of the pointer using jQuery
+						$('#pointer').css('top', yCor + '%'); // Top position (y coordinate)
+						$('#pointer').css('left', xCor + '%'); // Left position (x coordinate)
+						// Setting height and width (z coordinate)
+						$('#pointer').css('height', zSize + 'px');
+						$('#pointer').css('width', zSize + 'px');
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

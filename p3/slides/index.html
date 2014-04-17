@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Leap Motion - A glimpse into the Future</title>
+
+		<meta name="description" content="The SDK to change all other SDKs. Welcome to the future of human-computer interaction.">
+		<meta name="author" content="Rukmal Weerawarana">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section data-background="images/front_background.png">
+					<h1>Leap into the future with Leap Motion</h1>
+					<small>
+						<p>Sudo Soldiers</p>
+						<p>04.16.2014</p>
+					</small>
+				</section>
+				<section>
+					<section>
+						<h1>Welcome.</h1>
+						<aside class="notes">
+							Hello everyone...
+						</aside>
+					</section>
+					<section>
+						<h2>Today's plate</h2>
+						<ul>
+							<li>Leap Motion</li>
+							<li>Leap Motion SDK</li>
+							<li>Getting on the bandwagon</li>
+							<li>Demos!</li>
+						</ul>
+						<aside class="notes">
+							today we're going to be looking at..
+							elaborate on each bullet
+						</aside>
+					</section>
+					<section>
+						<img src="images/profile.jpg" height="250px">
+						<br>
+						<h2>Rukmal Weerawarana</h2>
+						<p>Colombo, Sri Lanka</p>
+						<p>Freshman, UW</p>
+						<p>Computer Science?</p>
+						<p><a href="http://rukmal.me/">http://rukmal.me/</a></p>
+						<p><a href="http://github.com/">http://github.com/rukmal/</a></p>
+						<aside class="notes">
+							Go.
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>What is it?</h1>
+					<aside class="notes">
+						First off...
+						Does everyone here know what the leap motion is, and what it does?
+						If no, go down. If not, go right.
+					</aside>
+					</section>
+					<section>
+						<iframe width="1244" height="700" src="http://www.youtube.com/embed/_d6KuiuteIA" frameborder="0" allowfullscreen></iframe>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Who uses it?</h1>
+						<aside class="notes">
+							What's so special about this device?
+							Well, it's the closes thing we have to Iron-Man esque UIs we have now.
+							Quote the inspiration from tony start
+						</aside>
+					</section>
+					<section>
+						<h2>SpaceX</h2>
+						<blockquote>
+							Right now, we interact with computers in a very unnatural 2D way.
+							<br>
+							With the Leap Motion Controller, you can really apply your intuition and something from your mind to a physical object with far greater ease than we currently do.
+						</blockquote>
+						<p>- Elon Musk</p>
+					</section>
+				</section>
+				<section>
+					<h1>How do I get started?</h1>
+					<aside class="notes">
+						Okay, let's start writing some applications
+					</aside>
+				</section>
+				<section>
+					<img src="images/leapmotion_developer.png">
+					<aside class="notes">
+						The Leap Motion SDK is one of the best...
+						Awesome documentation
+					</aside>
+				</section>
+				<section>
+					<h2>What languages can I use it with?</h2>
+					<ul>
+						<li>C++</li>
+						<li>C#</li>
+						<li>Objective C</li>
+						<li>Java</li>
+						<li>JavaScript</li>
+						<li>Python</li>
+					</ul>
+					<aside class="notes">
+						This SDK supports pretty much every language under the sun
+						I've used Java and JS...
+						They're pretty good, very easy to initialize
+					</aside>
+				</section>
+				<section data-background="images/purple_background.png">
+					<h1>LeapJS</h1>
+					<aside class="notes">
+						Following the SS theme...
+					</aside>
+				</section>
+				<section>
+					<h2>Getting started...</h2>
+					<p>HTML</p>
+					<pre><code class="html">
+<script src="//js.leapmotion.com/leap-0.4.3.min.js"></script>
+					</code></pre>
+					<p>JavaScript</p>
+					<pre><code class="javascript">
+var controller = new Leap.Controller({
+	enableGestures: true
+});
+
+controller.connect();
+					</code></pre>
+					<aside class="notes">
+						As with any other thing, you import it in the DOM, and then initialize it
+						Point out what statement connects with the Leap Motion
+					</aside>
+				</section>
+				<section>
+					<h2>The loop</h2>
+					<pre><code class="javascript">
+var controller = new Leap.Controller({
+	enableGestures: true
+});
+
+controller.connect();
+
+// the Leap Motion loop
+controller.on('frame', function (frame) {
+
+});
+					</code></pre>
+					<aside class="notes">
+						Introduce the 'frame' element. Talk about how it is the main part of the Leap Motion SDK
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h1>Frame is everything</h1>
+						<aside class="notes">
+							The frame is everything...
+							Well, not really but
+						</aside>
+					</section>
+					<section>
+						<h2>3 things</h2>
+						<ul>
+							<li>Tools</li>
+							<li>Fingers</li>
+							<li>Hands</li>
+						</ul>
+						<aside class="notes">
+							Everything is a pointable
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Gestures</h1>
+						<aside class="notes">
+							Another thing we're going to talk about is gestures...
+							Most important part of the leap motion...
+						</aside>
+					</section>
+					<section>
+						<h2>The Fantastic Four</h2>
+						<ul>
+							<li>CircleGesture</li>
+							<li>SwipeGesture</li>
+							<li>ScreenTapGesture</li>
+							<li>KeyTapGesture</li>
+						</ul>
+						<aside class="notes">
+							These gestures make it really easy to write applications for the leap.
+							Something that you would think takes up 100 lines of code really takes up 4
+								eg: Okay leap, tell me how many fingers there are on screen and tell me exactly where they are
+						</aside>
+					</section>
+				</section>
+				<section data-background="images/front_background.png">
+					<h1>Let's make something!</h1>
+					<aside class="notes">
+						Hands dirty.
+						Let's build something.
+					</aside>
+				</section>
+				<section>
+					<section data-background="images/green_background.png">
+						<h1>Demos</h1>
+					</section>
+					<section>
+						<p><a href="http://github.com/rukmal/FlappyLeapBird">Flappy Leap Bird - Rukmal Weerawarana</a></p>
+						<br>
+						<p><a href="http://github.com/grant/LeapTheremin/">Leap Theremin - Grant Timmerman</a></p>
+						<br>
+						<p><a href="http://github.com/grant/LeapPong/">Leap Pong - Grant Timmerman & Rukmal Weerawarana</a></p>
+					</section>
+				</section>
+				<section data-background="images/front_background.png">
+					<h1>Thank you!</h1>
+					<p>Questions?</p>
+					<p><a href="http://rukmal.me/">http://rukmal.me/</a></p>
+					<p><a href="http://github.com/rukmal/">http://github.com/rukmal/</a></p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Leap motion control configuration
+				leap: {
+					naturalSwipe   : true,    // Invert swipe gestures
+					pointerOpacity : 0.0,      // Set pointer opacity to 0.5
+					pointerColor   : '#d80000' // Red pointer
+				},
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/leap/leap.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
