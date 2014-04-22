@@ -269,15 +269,44 @@ GET /events/concerts/123 - get a specific concert</code></pre>
 
         <section>
           <section>
-            <h1>Installing git</h1>
+            <h1>Headers</h1>
           </section>
           <section>
-          <p><a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></p>
-          <ul>
-            <li>Binaries for Win, Mac, Linux</li>
-            <li>Build from source</li>
-          </ul>
-          <blockquote>"If you want to build [git] on Windows: Don't."</blockquote>
+          	<p>Client to Server</p>
+	          <ul>
+	            <li>Authorization - Enable auth for any method</li>
+	            <li>User-Agent - Info about the client</li>
+	            <li>Host - Domain of the client</li>
+	          </ul>
+          </section>
+          <section>
+          	<p>Server to Client</p>
+	          <ul>
+	            <li>Content-Encoding - Compression being used</li>
+	            <li>Content-Length - Size of response in bytes</li>
+	          </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>State</h1>
+          </section>
+          <section>
+            <h2>REST is Stateless</h2>
+            <h3>That means...</h3>
+            <ul>
+              <li>Do not create session</li>
+              <li>Client must pass authorization in every call</li>
+              <li>Never, never use a session key</li>
+            </ul>
+          </section>
+          <section>
+            <p>Server to Client</p>
+            <ul>
+              <li>Content-Encoding - Compression being used</li>
+              <li>Content-Length - Size of response in bytes</li>
+            </ul>
           </section>
         </section>
 
