@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>My first Leap Motion App!</title>
+		<script src="http://js.leapmotion.com/leap-0.4.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	</head>
+	<body>
+		<div id="outer">
+			<div id="pointer"></div>
+		</div>
+		<style>
+			html, body {
+				margin: 0em;
+				padding: 0em;
+				height: 100%;
+				width: 100%;
+			}
+
+			#outer {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: blue;
+			}
+
+			#pointer {
+				position: absolute;
+				background-color: red;
+				height: 50px;
+				width: 50px;
+				left: 50%;
+				top: 50%;
+				border-radius: 50px;
+				transition: left 10ms;
+				transition: right 10ms;
+			}
+		</style>
+		<script></script>
+	</body>
+</html>

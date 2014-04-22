@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>REST For the Wicked</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>REST For the Wicked</h1>
+          <p>
+            <small>Sudo Soldiers <br> 04.23.2014</small>
+          </p>
+        </section>
+
+        <section>
+          <section>
+          <h1>Hi. I’m Karan.</h1>
+          </section>
+          <section>
+          <img src="http://www.goel.im/images/me.jpg" alt="" style="width:200px">
+          <p>
+            <ul>
+              <li>CS, UW
+              <li><3 code
+              <li><a href="http://www.goel.im">goel.im</a>
+              <li><a href="https://twitter.com/TheKaranGoel">@TheKaranGoel</a> (follow me)</li>
+            </ul>
+          </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+          <h1>Sudo Soldiers</h1>
+          </section>
+          <section>
+          <img src="http://i.imgur.com/a7B1FtF.jpg" alt="" style="width:700px">
+          <ul>
+            <li><a href="https://www.facebook.com/groups/uwhackers/">https://www.facebook.com/groups/uwhackers/</a>
+            <li><a href="https://github.com/SudoSoldiers/">https://github.com/SudoSoldiers/</a>
+            <li><a href="http://students.washington.edu/uwsudo/">http://students.washington.edu/uwsudo/</a>
+            <li>uwsudo@uw.edu
+          </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+          <h1>Weekly demos</h1>
+          </section>
+          <section>
+          <ul>
+            <li>2 pitches every week</li>
+            <li>Complete/incomplete projects + ideas welcome</li>
+            <li>Talk about: Motivation, challenged, help, experience</li>
+            <li>2 minutes each pitch - hard limit</li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1slFXDxr0Qdovn4xWJfMIMWaYpXRVhTTZQdRCFqL_YXw/edit#gid=0">Sign up now!</a></li>
+          </ul>
+          </section>
+          <section>
+            <h3>Today's Demos</h3>
+            <ul>
+              <li><a href="https://github.com/karan/scInstant">scInstant - Karan Goel</a></li>
+              <li><a href="http://github.com/rukmal/UW-OpenData">UW Open Data - Rukmal Weerawarana</a></li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Today...</h2>
+          <h1>REST</h1>
+        </section>
+
+        <section>
+        	<section>
+				<h1>API</h1>
+        	</section>
+          <section>
+	          <ul>
+	            <li>defines interaction between components</li>
+	            <li>software or hardware</li>
+	            <li>HTTP - REST, SOAP</li>
+	          </ul>
+	      </section>
+        </section>
+
+
+        <section>
+					<section>
+						<h1>REST</h1>
+					</section>
+					<section>
+						<ul>
+							<li>Representational state transfer</li>
+							<li>Web standard</li>
+							<li>Anything can make a request and process the response</li>
+							<li><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">Dissertation by Roy Thomas Fielding</a></li>
+						</ul>
+					</section>
+        </section>
+
+        <section>
+          <section>
+						<h1>Why bother</h1>
+					</section>
+					<section>
+						<ul>
+							<li>API's break strong ties between components</li>
+							<li>Separation of client from server</li>
+							<li>1 API - Multiple devices</li>
+							<li>Easier to make clients</li>
+							<li>Exansion - Motivate other developers to leverage your platform</li>
+						</ul>
+					</section>
+        </section>
+
+        <section>
+          <section>
+						<h1>JSON</h1>
+					</section>
+					<section>
+						<ul>
+							<li>Data exchange format</li>
+							<li>JavaScript Object Notation</li>
+							<li><code>name: value</code> pairs</li>
+							<pre><code>{
+    "firstName": "John",
+    "lastName": "Smith",
+    "isAlive": true,
+    "age": 25,
+    "height_cm": 167.64,
+    "address": {
+        "streetAddress": "21 2nd Street",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": "10021-3100"
+    },
+    "phoneNumbers": [
+        { "type": "home", "number": "212 555-1234" },
+        { "type": "fax",  "number": "646 555-4567" }
+    ]
+}</code></pre>
+						</ul>
+					</section>
+        </section>
+
+        <section>
+          <section>
+						<h1>HTTP methods</h1>
+					</section>
+					<section>
+						<p>REST is all about simplifying API's. It defines 4 methods (verbs):</p>
+						<ul>
+							<li>GET - Read a specific resource</li>
+							<li>PUT - Update a specific resource</li>
+							<li>DELETE - Remove/delete a specific resource</li>
+							<li>POST - Create a new resource.</li>
+						</ul>
+					</section>
+					<section>
+						So instead of API calls such as:
+
+<pre><code>Create – GET: /user/new?name=John
+Read – GET: /user/1
+Update – GET: /user/1/update?name=Doe
+Delete – GET: /user/1/delete</code></pre>
+
+Simply:
+
+<pre><code>Create – POST: /user (with request body)
+Read – GET: /user/1
+Update – PUT: /user/1 (with request body)
+Delete – DELETE: /user/1</code></pre>
+					</section>
+        </section>
+
+        <section>
+          <section>
+						<h1>Resource vs Representation</h1>
+					</section>
+					<section>
+						<h2>Resource</h2>
+						<p>Consider <code>http:/test.com/user/1</code>. Here, <code>user/1</code> is a resource.</p>
+						<br><br>
+						<h2>Representation</h2>
+						<p>Set of attributes related to the resource returned by the URI. A `GET http:/test.com/user/1` returns the representation of a user as:</p>
+						<pre><code>name: John
+Age: 21</code></pre>
+						Representation has a format (XML, JSON, JSONP) and a language (en, de).
+					</section>
+        </section>
+
+        <section>
+          <section>
+						<h1>80/20</h1>
+					</section>
+					<section>
+						<ul>
+							<li>Making an API is 80% art and 20% science.</li>
+							<li>Art - Creating a sensible URL hierarchy</li>
+							<li>Science - Creating sensible resource names</li>
+							<li>Follow the standards</li>
+						</ul>
+					</section>
+
+					<section>
+						<ul>
+							<li>URL hierarchy should make it obvious - how to use the API</li>
+							<li>Resource names should provide context for service request</li>
+							<pre><code>GET /events - get all events
+GET /events/concerts - get all concerts
+GET /events/concerts/123 - get a specific concert</code></pre>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>URL's are hierarchical - leverage that</li>
+							<li>Design for clients, not the data</li>
+							<li>Avoid verbs, use nouns</li>
+							<li>Keep URL's short and sensible</li>
+						</ul>
+					</section>
+        </section>
+
+        <section>
+          <section>
+            <h1>HTTP Response Codes</h1>
+          </section>
+          <section>
+          <ul>
+            <li>200 OK</li>
+            <li>201 CREATED</li>
+            <li>400 BAD REQUEST</li>
+            <li>401 UNAUTHORIZED</li>
+            <li>404 NOT FOUND</li>
+            <li>500 INTERNAL SERVER ERROR</li>
+            <li>418 - I'M A TEAPOT</li>
+          </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Installing git</h1>
+          </section>
+          <section>
+          <p><a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></p>
+          <ul>
+            <li>Binaries for Win, Mac, Linux</li>
+            <li>Build from source</li>
+          </ul>
+          <blockquote>"If you want to build [git] on Windows: Don't."</blockquote>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Configure git</h1>
+          </section>
+          <section>
+          <p>Important since Github uses email to identify user (unless using ssh)</p>
+          <pre><code># configure the user which will be used by git
+# Of course you should use your name
+git config --global user.name "Example Surname"
+
+# Same for the email address
+git config --global user.email "your.email@gmail.com" 
+          </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Create a repository</h2>
+          </section>
+          <section>
+          <pre><code>git init awesome-project</code></pre>
+          <p>Or</p>
+          <pre><code>cd ~/awesome-project
+git init</code></pre>
+          <h3>Or, clone.</h3>
+          <pre><code>git clone link/to/remote</code></pre>
+        </section>
+        </section>
+
+        <section>
+          <section>
+          <h1>.gitignore</h1>
+          </section>
+          <section>
+          <p>Specifies intentionally untracked files to ignore</p>
+          <pre><code>cd awesome-project
+vim .gitignore</code></pre>
+
+          <pre><code># a comment
+.to-exclude
+!include-this.txt</code></pre>
+          <p>Complete pattern guide here: <a href="http://git-scm.com/docs/gitignore">http://git-scm.com/docs/gitignore</a></p>
+          <p>Committed files are not automatically removed. Use this to remove files from git repo:</p>
+          <pre><code>git rm -r --cached awesome-file</code></pre>
+          </section>
+        </section>
+
+        <section data-background="gray">
+          <h2>Usual workflow</h2>
+          <pre><code># assuming you have a repo with changes made to it
+
+# this shows files that have been changed, and the status of stage
+git status
+
+# add all files to the stage
+git add .
+
+# commit the changes to local repo
+git commit -m "a message"</code></pre>
+        </section>
+
+        <section data-background="gray">
+          <h1>80/20</h1>
+        </section>
+
+        <section>
+          <h2>log</h2>
+          <pre><code># show git log
+git log
+
+# this is what the output looks like
+commit bcf7bd065199c1e79c8dcc57a9518bd53dec6da5
+Author: Karan Goel < karan@goel.im>
+Date:   Tue Apr 8 17:41:14 2014 -0700
+
+    started adding files for tomorrow</code></pre>
+
+          <p>Useful flags:</p>
+          <ul>
+            <li><code>--oneline</code> - give single line log</li>
+            <li><code>-N</code> - give last N commits</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Remotes</h2>
+          <p>A remote is a URL to a remote server where code lives. Default remote is called <i>origin</i></p>
+
+          <pre><code># add a new remote
+git remote add < remote> < link>
+
+# show all remotes
+git remote -v
+
+# fetches the code and merges it into your working directory
+git pull < remote> < branch>
+# fetches the code but does not merge it into your working directory
+git fetch < remote> < branch>
+
+# push my committed changes to remote and remember the upstread branch
+git push -u origin master</code></pre>
+        </section>
+
+        <section>
+          <section>
+            <h1>Github</h1>
+          </section>
+
+          <section>
+            <h2>Clone from Github</h2>
+
+            <pre><code># SSH
+git clone git@github.com:karan/Projects.git
+
+# HTTPS
+git clone https://github.com/karan/Projects.git</code></pre>
+        
+          </section>
+
+          <section>
+            <h2>Forking</h2>
+
+            <ul>
+              <li>Complete history of original repo</li>
+              <li>Encourages individual exploration</li>
+              <li>Forking != Cloning</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Pull Requests</h2>
+            <ul>
+              <li>Merging with traceability</li>
+              <li>Peer-review via GitHub & Git</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h1>Ninja tricks</h1>
+        </section>
+
+        <section>
+          <h3>Correct the last commit</h3>
+          <pre><code># because coding while drunk is bad for you
+git commit -m "my boss is a dick"</code></pre>
+
+<pre data-fragment-index="0" class="fragment"><code># thank god for git
+git commit --amend -m "my boss is a fat dick"</code></pre>
+        </section>
+
+        <section>
+          <h3>Check history of specific file</h3>
+          <pre><code>git log -- filename</code></pre>
+        </section>
+
+        <section>
+          <h3>Undo commit</h3>
+          <pre><code># Revert to a previous commit by SHA-1 hash
+git reset --hard < hash>
+
+# or simply undo the last commit
+git reset --hard HEAD^</code></pre>
+        </section>
+
+        <section>
+          <h3>Tagging</h3>
+          <pre><code># tags are used to mark specific points in history
+
+# list all tags
+git tag
+
+# add a new tag
+git tag -a "v1.0"
+
+# or add a tag for any commit
+git tag -a "v1.0" < hash>
+
+# push tags to remote
+git push --tag </code></pre>
+        </section>
+
+        <section>
+          <h3>Branches</h3>
+          <pre><code># create a new branch
+git branch branch-name
+
+# list all branches in the current repository
+git branch
+
+# switch to an existing branch
+git checkout branch-name
+
+# create a branch and switch to it
+git checkout -b branch-name
+
+# delete a branch
+git branch -d branch-name
+
+# merge two branches (source into target) (make sure to be on target)
+git merge source</code></pre>
+        </section>
+
+        <section>
+          <h3>Merge conflicts</h3>
+          <pre><code># git is smart, but not really. when same line is changed more 
+# than once at the same time, conflicts can arise
+
+# this is what lines with conflicts look like
+
+<<<<<<< HEAD
+This is what my local repo has.
+=======
+This is what someone else did.
+>>>>>>> 0c7ac2ab7ab93366fb662e8292706c084001fb31 
+
+# manually select what to keep, commit and push!</code></pre>
+        </section>
+
+        <section>
+          <h3>Aliases</h3>
+          <pre><code>vim ~/.bashrc
+
+# git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push $1 $1'
+
+# saves a gazillion keystrokes
+
+# for those who live on the edge
+alias yolo = 'git commit -am "TAG" && git push -f origin master'</code></pre>
+        </section>
+
+        <section data-background="teal">
+          <h2>Now what?</h2>
+          <ul>
+            <li>Signup for Github</li>
+            <li>Start working with git</li>
+            <li>Good resource: <a href="https://github.com/karan/Projects">karan/Projects</a></li>
+          </ul>
+        </section>
+
+        <section data-background="teal">
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="http://git-scm.com/book">Git book</a></li>
+            <li><a href="Github help">https://help.github.com/</a></li>
+            <li><a href="http://www.ndpsoftware.com/git-cheatsheet.html">Visual cheatsheet</a></li>
+            <li><a href="http://eagain.net/articles/git-for-computer-scientists/">Git for computer scientists</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>That is all.</h1>
+          <p>@TheKaranGoel</p>
+          <p><a href="http://github.com/karan">github.com/karan</a></p>
+          <br>
+          <h3>Questions?</h3>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
