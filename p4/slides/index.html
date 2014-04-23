@@ -301,40 +301,59 @@ GET /events/concerts/123 - get a specific concert</code></pre>
               <li>Never, never use a session key</li>
             </ul>
           </section>
-          <section data-background="#111111">
-            <p>Server to Client</p>
-            <ul>
-              <li>Content-Encoding - Compression being used</li>
-              <li>Content-Length - Size of response in bytes</li>
-            </ul>
-          </section>
         </section>
 
-        <section data-background="#DDDDDD">
-          <section data-background="#AAAAAA">
+        <section data-background="#85144B">
+          <section data-background="#85144B">
             <h1>Let's make an API</h1>
           </section>
-          <section data-background="#AAAAAA">
-            Explain the data
+          <section data-background="#85144B">
+            <h3>Acronyms API</h3>
+<center><blockquote class="twitter-tweet" lang="en"><p>Trying to find a good &quot;acronyms api&quot;. Why didn&#39;t I think this through before searching?</p>&mdash; Karan Goel (@TheKaranGoel) <a href="https://twitter.com/TheKaranGoel/statuses/455930990465019904">April 15, 2014</a></blockquote></center>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
           </section>
-          <section data-background="#AAAAAA">
-            Explain things that have been done. Switch to IDE.
+          <section data-background="#85144B">
+            <p>We have the data and starter code. Let's hack something!</p>
+            <p>Use <a href="https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en">Postman</a> to test the API.</p>
           </section>
         </section>
 
-        <section data-background="#DDDDDD">
-          <section data-background="#AAAAAA">
+        <section data-background="#85144B">
+          <section data-background="#85144B">
             <h1>Deploying</h1>
           </section>
-          <section data-background="#AAAAAA">
-            Heroku. What, why.
+          <section data-background="#85144B">
+            <h2>Heroku</h2>
+            <ul>
+              <li>PAAS</li>
+              <li>Free</li>
+              <li>Easy deployment</li>
+              <li><code>git push heroku master</code></li>
+              <li>Addons for pretty much anything you want</li>
+            </ul>
           </section>
-          <section data-background="#AAAAAA">
-            How.
+          <section data-background="#85144B">
+            <h2>Deploy our API</h2>
+            <small>Assuming you signed up, and logged in using the Heroku Toolkit.</small>
+            <pre><code># make a Procfile
+$ echo "web: node app.js" > Procfile
+
+# test using foreman
+$ foreman start
+
+# (git add, git commit your code)
+
+# create an app
+$ heroku create [app name]
+
+# to the moon
+git push heroku master</code></pre>
+
+            <p><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Detailed tutorial</a></p>
           </section>
         </section>
 
-        <section data-background="teal">
+        <section data-background="#111111">
           <h2>Now what?</h2>
           <ul>
             <li><a href="http://blog.mashape.com/post/60820526317/list-of-40-tutorials-on-how-to-create-an-api">40+ Tutorials</a></li>
