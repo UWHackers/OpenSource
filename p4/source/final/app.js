@@ -11,6 +11,7 @@ var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
+app.use(express.bodyParser());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
@@ -33,45 +34,56 @@ acronyms = {
   "LASER": "Light amplification by the stimulated emission of radiation",
   "NATO": "The North Atlantic Treaty Organization",
   "WASP": "White anglo saxon protestant",
-  "RSVP": "Répondez s'il vous plait",
-  "REST": "Representational state transfer",
-  "API": "Application programming interface"
+  "RSVP": "Répondez s'il vous plait"
 };
 
 app.get('/', function(req, res) {
     res.send(200, {
-        'message': 'Sudo Acronyms API v1'
+      message: 'what up'
     });
 });
 
 app.get('/:acronym', function(req, res) {
-    var acronym = req.params.acronym.toUpperCase();
-    console.log(acronym);
+  var acronym = req.params.acronym.toUpperCase();
+  // res.send(200, acronym);
+  var result = {};
+  result[acronym] = acronyms[acronym];
+
+  if (result[acronym]) {
+    res.send(200, result);
+  } else {
+    res.send(400, {error: 'not found'})
+  }
+});
+
+app.post('/', function(req, res) {
+  var acronym = req.body.acronym.toUpperCase();
+  var full = req.body.full;
+
+  if (acronyms[acronym]) {
+    res.send(400, {error: 'already exists'});
+  } else {
+    acronyms[acronym] = full;
 
     var result = {};
     result[acronym] = acronyms[acronym];
-
     if (result[acronym]) {
-        res.send(200, result);
+      res.send(200, result);
     } else {
-        res.send(400, {
-            'error': 'acronym not found'
-        });
+      res.send(500, {error: 'try again'})
     }
-});
+  }
 
-app.post('/:acronym/:full', function(req, res) {
-    var acronym = req.params.acronym.toUpperCase();
-    var full = req.params.full;
-
-    if (acronyms[acronym]) {
-        res.send(400, {'error' : 'acronym exists'});
-    } else {
-        acronyms[acronym] = full;
-        res.send(200, {'status': 'done'})
-    }
 });
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
+
+
+
+
+
+
