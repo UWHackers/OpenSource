@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Automating your life: Arduino hacking for fun and profit (but mostly fun)</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section data-background="#111111">
+          <h1>Automating your life:</h1><h3>Arduino hacking for fun and profit (but mostly fun)</h3>
+          <p>
+            <small>Sudo Soldiers <br> 04.30.2014</small>
+          </p>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+          <h1>Hi. I’m Nat.</h1>
+          </section>
+          <section data-background="#111111">
+          <img src="images/natface_jpa.jpg" alt="" style="width:200px">
+          <p>
+            <ul>
+              <li>CS, AA, TA, NOA
+              <li>Programming, robots, translation
+              <li><a href="http://www.natguy.net">www.natguy.net</a>
+            </ul>
+          </p>
+          </section>
+        </section>
+
+        <section data-background="#111111">
+          <h2>Today we'll talk about</h2>
+          <h1>Arduino</h1>
+        </section>
+
+        <section data-background="#111111">
+        	<section data-background="#111111">
+				<h1>What's Arduino?</h1>
+        	</section>
+          <section data-background="#111111">
+	          <ul>
+	            <li>Microcontroller: miniature computer on a board</li>
+              <li>Has processor, RAM, flash memory, EEPROM</li>
+              <li>Programmable in C++</li>
+              <li>Can also inline AVR assembly</li>
+              <li>Easy to connect to other electronics</li>
+          </section>
+            <section data-background="#111111">
+            <img src="images/uno.jpg" alt="" style="height:250px"> <img src="images/mega.jpg" alt="" style="height:250px"> <img src="images/mini.jpg" alt="" style="height:250px">
+              <ul>
+                <li>Started as student project in Italy in 2005</li>
+                <li>Open-source</li>
+                <li>Multiple form factors available, with different components</li>
+                <li>Popular models include the Uno, Mega, and Mini</li>
+                <li>Inexpensive: $25, $46, and $10 for models above</li>
+	           </ul>
+            </section>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+            <h1>A closer look at Arduino Uno</h1>
+          </section>
+            <section data-background="#111111">
+              <img src="images/uno.jpg" alt="" style="width:550px">
+            <ul>
+              <li>16 MHz, 8-bit CPU</li>
+              <li>32kB flash memory, 1kB EEPROM</li>
+              <li>2kB SRAM</li>
+              <li>USB interface</li>
+              <li>Easy to connect to other electronics</li>
+          </section>
+
+        </section>
+
+
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+            <h1>Connecting to Your Computer</h1>
+          </section>
+          <section data-background="#111111">
+            <ul>
+              <li>USB from Arduino board into computer</li>
+              <li>Compiled code is sent over and loaded onto flash memory</li>
+              <li>Afterwards, can unplug and use without computer</li>
+              <li>Similar to game console development</li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+            <h1>Programming Basics</h1>
+          </section>
+          <section data-background="#111111">
+            <ul>
+              <li>Start with setup() function</li>
+              <li>Called once when sketch starts</li>
+              <li>Used for initializing variables, pin modes, etc.</li>
+            </ul>
+          </section>
+
+          <section data-background="#111111">
+            <ul>
+              <li>Next, add functionality to loop() function</li>
+              <li>Loops ad infinitum</li>
+              <li>Usually used for main program logic</li>
+            </ul>
+          </section>
+
+          <section data-background="#111111">
+            <h3>Simple Example</h3>
+          <pre><code>
+int ledPinNumber = 3; // LED connected to digital pin 3
+int period = 500; // LED on for 500 ms, off for 500ms
+
+void setup()
+{
+    // Set the LED pin to output mode
+    pinMode(ledPinNumber, OUTPUT);
+}
+
+void loop()
+{
+    // Turn on LED
+    digitalWrite(ledPinNumber, HIGH);
+    // Wait
+    delay(period);
+    // Turn off LED
+    digitalWrite(ledPinNumber, LOW);
+    // Wait
+    delay(period);
+}
+        </code></pre>
+          </section>
+          <section>
+            <h2>Let's give it a try!</h2>
+          </section>
+
+          <section data-background="#111111">
+            Lots of <a href="http://arduino.cc/en/Reference/Libraries">libraries</a> available:
+            <ul>
+              <li>Motors and servos</li>
+              <li>SD cards</li>
+              <li>Audio processing and playback</li>
+              <li>LCD screens</li>
+              <li>Wireless communication</li>
+              <li>Almost any game controller you can imagine</li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+            <h1>Less Simple Demo</h1>
+          </section>
+
+
+          <section data-background="#111111">
+            <img src="images/johnny.png">
+            <ul>
+              <li>Robot with Arduino board</li>
+              <li>Wheels driven by two different motors</li>
+              <li>Infrared sensors</li>
+            </ul>
+          </section>
+
+          <section data-background="#111111">
+            <ul>
+              <li>Want robot to be able to follow black lines</li>
+              <li>Line will be directly in the center of robot</li>
+              <li>Drive forward, always staying on the line</li>
+            </ul>
+          </section>
+
+          <section data-background="#111111">
+            <h3>A closer look</h3>
+            <img src="images/johnny_b0.png">
+          </section>
+
+          <section data-background="#111111">
+            <h3>A closer look</h3>
+            <img src="images/johnny_b1.png">
+          </section>
+
+          <section data-background="#111111">
+            <h3>A closer look</h3>
+            <img src="images/johnny_b2.png">
+          </section>
+          
+          <section data-background="#111111">
+            <h2>Let's look at the code!</h2>
+          </section>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+            <h1>Other Projects</h1>
+          </section>
+          <section data-background="#111111">
+            <h3>Simon Says with SNES Controller</h3>
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=kHPPuXDk-Dk">Demo video</a></li>
+              <li><a href="https://github.com/NattyBumppo/Simon-Clone-for-Arduino">Github repo</a></li>
+          </ul>
+          </section>
+
+          <section data-background="#111111">
+            <h3>ArduCopter</h3>
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=YvTj6dlQ9fo">Demo video</a></li>
+              <li><a href="http://copter.ardupilot.com/">Official site + store</a></li>
+            </ul>
+          </section>
+
+
+          <section data-background="#111111">
+            <h3>Shiny Pokémon Getting</h3>
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=jyJPsZc-QTM&src_vid=pzh7a-21oUs&feature=iv&annotation_id=annotation_1372146561">Demo video</a></li>
+            </ul>
+          </section>
+
+
+          <section data-background="#111111">
+            <h3>Photobioreactors</h3>
+            <ul>
+              <li><a href="http://biomonstaaar.com/">Biomonstaaar</a> automated bioreactor</li>
+              <li>Grows algae</li>
+              <li>Automatically controls heat, humidity, light, etc.</li>
+              <li>Controllable via web browser</li>
+            </ul>
+          </section>
+
+          <section data-background="#111111">
+            <h3>Anything you want!</h3>
+
+          </section>
+        </section> 
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+            <h1>Resources</h1>
+          </section>
+          <section data-background="#111111">
+            <ul>
+              <li><a href="http://arduino.cc/en/Guide/HomePage">Initial steps for setting up your board</a></li>
+              <li><a href="http://arduino.cc/en/Tutorial/HomePage">Project code examples</a></li>
+              <li><a href="https://www.sparkfun.com/arduino_guide">Sparkfun Arduino Buying Guide</a></li>
+              <li><a href="https://www.sparkfun.com/">Sparkfun</a> (very user-friendly electronics store)</li>
+              <li><a href="https://www.sparkfun.com/products/12001">Arduino inventor's kit</a></li>
+            </ul>
+          </section>
+        </section>
+
+        <section data-background="#111111">
+          <h1>That's it!</h1>
+          <h3>Questions?</h3>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
