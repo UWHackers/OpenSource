@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Polymer</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section data-background="#111111">
+          <h1>Polymer</h1>
+          <h3>Building the Future of the Web</h3>
+          <p>
+            <small>Sudo Soldiers <br> 05.21.2014</small>
+          </p>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+          <h1>Hi. I’m Karan.</h1>
+          </section>
+          <section data-background="#111111">
+          <img src="https://avatars2.githubusercontent.com/u/3261985?s=460" alt="" style="width:200px">
+          <p>
+            <ul>
+              <li>CS, UW
+              <li><3 code
+              <li><a href="http://www.goel.im">goel.im</a>
+              <li><a href="https://twitter.com/TheKaranGoel">@TheKaranGoel</a> (follow me)</li>
+            </ul>
+          </p>
+          </section>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+          <h1>Sudo Soldiers</h1>
+          </section>
+          <section data-background="#111111">
+          <img src="http://i.imgur.com/a7B1FtF.jpg" alt="" style="width:700px">
+          <ul>
+            <li><a href="https://www.facebook.com/groups/uwhackers/">https://www.facebook.com/groups/uwhackers/</a>
+            <li><a href="https://github.com/SudoSoldiers/">https://github.com/SudoSoldiers/</a>
+            <li><a href="http://students.washington.edu/uwsudo/">http://students.washington.edu/uwsudo/</a>
+            <li>uwsudo@uw.edu
+          </ul>
+          </section>
+        </section>
+
+        <section data-background="#111111">
+        	<section>
+        		<h2>Today...</h2>
+	          <h3>Polymer</h4>
+	          <p>Slides based on webcomponentsshift.com</p>
+        	</section>
+          <section data-background="http://f2.thejournal.ie/media/2014/05/emrknjp.gif"></section>
+        </section>
+
+        <section data-background="#111111">
+        	<section data-background="#111111">
+						<h1>Web Components</h1>
+        	</section>
+          <section data-background="#111111">
+	          <ul>
+	            <li>future</li>
+	            <li>standards arriving in browsers</li>
+	            <li>bundle markup into one file</li>
+	            <li><b>crazy</b> productivity</li>
+	          </ul>
+		      </section>
+		      <section data-background="#111111">
+		      	<h2>Building blocks of Web Components</h2>
+	          <ul>
+	            <li><a href="https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/shadow/index.html">Shadow DOM</a></li>
+	            <li><a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/templates/index.html">HTML Templates</a></li>
+	            <li><a href="https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/custom/index.html">Custom Elements</a></li>
+	            <li><a href="https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/imports/index.html">HTML Imports</a></li>
+	          </ul>
+		      </section>
+        </section>
+
+
+        <section data-background="#111111">
+					<section data-background="#111111">
+						<h1>Polymer</h1>
+						<p><a href="http://www.polymer-project.org/">Polymer-Project.org</a></p>
+					</section>
+					<section data-background="#111111">
+						<ul>
+							<li>Google</li>
+							<li>set of polyfills</li>
+							<li>multiple levels of abstraction</li>
+							<li>makes it easy to make web components</li>
+						</ul>
+					</section>
+					
+					<section data-background="http://tamas.io/content/images/2014/Feb/Screen_Shot_2014_02_19_at_23_45_50.png"></section>
+
+					<section>
+						<h2>Features</h2>
+						<ul>
+							<li>encapsulation</li>
+							<li>tag-style naming</li>
+							<li>w3c compliant</li>
+							<li>"write HTML in HTML"</li>
+						</ul>
+					</section>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="#111111">
+						<h1>Installing</h1>
+					</section>
+					<section>
+						<h4>Bower</h4>
+						<pre><code>npm install -g bower</code></pre>
+						<h4>Install Polymer</h4>
+						<pre><code>bower install --save Polymer/platform Polymer/polymer</code></pre>
+					</section>
+        </section>
+
+        <section data-background="#111111">
+          <section data-background="http://www.webcomponentsshift.com/images/bgs/shadowdom-car-front.jpg"></section>
+          <section>
+          	<h1>Shadow DOM is da shit</h1>
+          </section>
+        </section>
+
+        <section data-background="#85144B">
+          <section data-background="#85144B">
+            <h1>Let's make a custom element</h1>
+          </section>
+        </section>
+
+        <section data-background="#85144B">
+          <section data-background="#85144B">
+            <h1>Scaffolding</h1>
+            <ul>
+            	<li>doing this over and over again is painful</li>
+            	<li>automation, baby!</li>
+            </ul>
+          </section>
+          <section>
+          	<h1>yo customelement</h1>
+          	<p>A Yeoman generator for scaffolding a Polymer custom element the right way</p>
+          	<p><a href="https://github.com/karan/generator-customelement">karan/generator-customelement</a></p>
+          </section>
+        </section>
+
+        <section data-background="#111111">
+          <h2>Now what?</h2>
+          <ul>
+            <li><a href="http://www.polymer-project.org/docs/polymer/polymer.html">Polymer Docs</a></li>
+            <li><a href="http://customelements.io/">CustomElements.io</a></li>
+            <li><a href="http://webcomponents.org/">WebComponents.org</a></li>
+            <li>Start making stuff</li>
+          </ul>
+        </section>
+
+        <section data-background="#111111">
+          <section>
+          	<h1>That is all.</h1>
+          </section>
+          <section>
+          	<p><a href="http://www.goel.im">goel.im</a></p>
+	          <p><a href="https://twitter.com/TheKaranGoel">@TheKaranGoel</a></p>
+	          <p><a href="http://github.com/karan">github.com/karan</a></p>
+	          <br>
+	          <h3>Questions?</h3>
+	        </section>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
