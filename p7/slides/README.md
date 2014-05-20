@@ -1,6 +1,6 @@
-# Slides from talk on node.js.
+# Slides from talk on Polymer.
 
-### Karan Goel, 02.20.2014
+### Karan Goel, 05.21.2014
 
 All of this week's session was done using open source software.
 
