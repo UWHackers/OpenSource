@@ -1,0 +1,14 @@
+{
+  "name": "x-miley",
+  "description": "Make a fun, interactive Miley.",
+  "version": "0.0.0",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "main": "x-miley.html",
+  "homepage": "https://github.com/karan/x-miley/",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.2.4"
+  }
+}
