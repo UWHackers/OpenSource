@@ -14,11 +14,11 @@ Make a fun, interactive Miley. [**Live demo**](../x-miley/demo.html)
 @status alpha
 @homepage karan.github.io/x-miley
 -->
-<polymer-element name="x-miley" attributes="notitle">
+<polymer-element name="x-miley" attributes="width height">
 
   <template>
 
-    <img id="mileyImg" src="https://s1.yimg.com/bt/api/res/1.2/ot5iQRMnAk0a9QoZqwJUuw--/YXBwaWQ9eW5ld3M7Zmk9ZmlsbDtoPTMxMDtxPTc1O3NtPTE7dz0zMTA-/http://media.zenfs.com/289/2011/08/02/MileyCyrus_071025.jpg" on-click="{{clickHandler}}">
+    <img id="mileyImg" src="https://s1.yimg.com/bt/api/res/1.2/ot5iQRMnAk0a9QoZqwJUuw--/YXBwaWQ9eW5ld3M7Zmk9ZmlsbDtoPTMxMDtxPTc1O3NtPTE7dz0zMTA-/http://media.zenfs.com/289/2011/08/02/MileyCyrus_071025.jpg" on-click="{{clickHandler}}" width="{{width}}" height="{{height}}">
     <audio src="https://api.soundcloud.com/tracks/121890666/stream?consumer_key=apigee" id="audio"></audio>
   </template>
 
@@ -26,6 +26,8 @@ Make a fun, interactive Miley. [**Live demo**](../x-miley/demo.html)
 
     Polymer('x-miley', {
       animated: false,
+      width: "200px",
+      height: "200px",
 
       clickHandler: function() {
         if (!this.animated) {
