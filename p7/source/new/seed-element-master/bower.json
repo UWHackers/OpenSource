@@ -1,0 +1,16 @@
+{
+  "name": "x-miley",
+  "version": "0.0.0",
+  "authors": ["Anonymous <anonymous@example.com>"],
+  "description": "The element for our kids.",
+  "keywords": "seed, polymer, web-components",
+  "main": "x-miley.html",
+  "license": "MIT",
+  "homepage": "https://github.com/<USERNAME>/x-miley/",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.2.4"
+  }
+}

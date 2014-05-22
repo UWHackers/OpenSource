@@ -1,0 +1,48 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Element providing solution to no problem in particular.
+
+##### Example
+
+    <seed-element></seed-element>
+
+@element seed-element
+@blurb Element providing solution to no problem in particular.
+@status alpha
+@homepage http://username.github.io/seed-element
+-->
+<polymer-element name="x-miley" attributes="volume">
+
+  <template>
+
+    <img id="mileyImage" src="https://s1.yimg.com/bt/api/res/1.2/ot5iQRMnAk0a9QoZqwJUuw--/YXBwaWQ9eW5ld3M7Zmk9ZmlsbDtoPTMxMDtxPTc1O3NtPTE7dz0zMTA-/http://media.zenfs.com/289/2011/08/02/MileyCyrus_071025.jpg" on-click="{{handleClick}}">
+    <audio src="https://api.soundcloud.com/tracks/121890666/stream?consumer_key=apigee" id="audio"></audio>
+  
+  </template>
+
+  <script>
+
+    Polymer('x-miley', {
+
+      clicked: false,
+      
+      handleClick: function() {
+        if (!this.clicked) {
+          this.$.mileyImage.src = "http://content.animalnewyork.com/wp-content/uploads/small-animated-gif-twerking-buzzfeed-miley.gif";
+          this.$.audio.volume = this.volume;
+          console.log(this.volume);
+          this.$.audio.play();
+          this.$.audio.currentTime = 88;
+        } else {
+          this.$.mileyImage.src = "https://s1.yimg.com/bt/api/res/1.2/ot5iQRMnAk0a9QoZqwJUuw--/YXBwaWQ9eW5ld3M7Zmk9ZmlsbDtoPTMxMDtxPTc1O3NtPTE7dz0zMTA-/http://media.zenfs.com/289/2011/08/02/MileyCyrus_071025.jpg";
+          this.$.audio.pause();
+        }
+        this.clicked = !this.clicked;
+      }
+
+    });
+
+  </script>
+
+</polymer-element>
